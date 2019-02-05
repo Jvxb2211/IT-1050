@@ -53,20 +53,6 @@ namespace IT1050Lab1
             System.Console.WriteLine("Your total height in centimeters is " + totalHeightCM);
             System.Console.WriteLine("Your ability to vote is " + canVote);
             System.Console.ReadKey();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         }
     }
 }
