@@ -16,6 +16,7 @@ namespace IT1050Lab1
             string fullName;
             int age;
             bool isCitizen;
+            string isCitizenReply;
             bool canVote;
             int heightFeet;
             double heightInches;
@@ -44,7 +45,8 @@ namespace IT1050Lab1
             age = int.Parse(System.Console.ReadLine());
 
             System.Console.WriteLine("Are you a United States citizen? ");
-            isCitizen = bool.Parse(System.Console.ReadLine());
+            isCitizenReply = System.Console.ReadLine().ToLower();
+            isCitizen = isCitizenReply.Contains("y") || isCitizenReply.Contains("t");
 
             bool ofAge = (age >= 18);
             canVote = ofAge && isCitizen;
