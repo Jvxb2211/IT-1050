@@ -46,7 +46,7 @@ namespace IT1050Lab1
             System.Console.WriteLine("Are you a United States citizen? ");
             isCitizen = bool.Parse(System.Console.ReadLine());
 
-            bool ofAge = (age > 18);
+            bool ofAge = (age >= 18);
             canVote = ofAge && isCitizen;
 
             System.Console.WriteLine("Your full name is " + fullName);
