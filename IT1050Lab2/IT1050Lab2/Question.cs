@@ -32,7 +32,5 @@ namespace IT1050Lab2
             string input = System.Console.ReadLine().ToLower();
             return input.StartsWith("y") || input.StartsWith("t");
         }
-
-
     }
 }

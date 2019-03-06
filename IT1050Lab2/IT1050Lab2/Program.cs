@@ -38,10 +38,6 @@ namespace IT1050Lab2
             System.Console.WriteLine("Press any key to continue...");
 
             System.Console.ReadKey();
-         
-
-
-
         }
     }
 }

@@ -36,11 +36,13 @@ namespace IT1050Lab2
             if (this.Married)
             {
                 this.Spouse = new Person();
+                this.Spouse.Spouse = this;
                 System.Console.WriteLine("In regards to this person's spouse:");
                 this.Spouse.FirstName = Question.AskFirst();
                 this.Spouse.LastName = this.LastName;
                 this.Spouse.Age = Question.AskAge();
                 Person.SumOfAllAges += this.Spouse.Age;
+
             }
         }
   
