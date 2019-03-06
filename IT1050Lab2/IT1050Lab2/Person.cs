@@ -25,7 +25,24 @@ namespace IT1050Lab2
         {
             System.Console.WriteLine(GetFullName() + " (" + Age + ")");
         }
-        
+
+        public void GatherData()
+        {
+            this.FirstName = Question.AskFirst();
+            this.LastName = Question.AskLast();
+            this.Age = Question.AskAge();
+            Person.SumOfAllAges += this.Age;
+            this.Married = Question.AskMarried();
+            if (this.Married)
+            {
+                this.Spouse = new Person();
+                System.Console.WriteLine("In regards to this person's spouse:");
+                this.Spouse.FirstName = Question.AskFirst();
+                this.Spouse.LastName = this.LastName;
+                this.Spouse.Age = Question.AskAge();
+                Person.SumOfAllAges += this.Spouse.Age;
+            }
+        }
   
     
 

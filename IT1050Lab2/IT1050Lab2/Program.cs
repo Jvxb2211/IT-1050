@@ -15,47 +15,27 @@ namespace IT1050Lab2
             Person p1 = new Person();
             Person p2 = new Person();
             System.Console.WriteLine("In regards to the first person:");
-            p1.FirstName = Question.AskFirst();
-            p1.LastName = Question.AskLast();
-            p1.Age = Question.AskAge();
-            Person.SumOfAllAges += p1.Age;
-            p1.Married = Question.AskMarried();
-            if (p1.Married)
-            {
-                p1.Spouse = new Person();
-                System.Console.WriteLine("In regards to this person's spouse:");
-                p1.Spouse.FirstName = Question.AskFirst();
-                p1.Spouse.LastName = p1.LastName;
-                p1.Spouse.Age = Question.AskAge();
-                Person.SumOfAllAges += p1.Spouse.Age;
-                NumberOfPeople ++;
-            }
-            System.Console.WriteLine("In regards to the second person:");
-            p2.FirstName = Question.AskFirst();
-            p2.LastName = Question.AskLast();
-            p2.Age = Question.AskAge();
-            Person.SumOfAllAges += p2.Age;
-            p2.Married = Question.AskMarried();
+            p1.GatherData();
 
-            if (p2.Married)
-            {
-                p2.Spouse = new Person();
-                System.Console.WriteLine("In regards to this person's spouse:");
-                p2.Spouse.FirstName = Question.AskFirst();
-                p2.Spouse.LastName = p2.LastName;
-                p2.Spouse.Age = Question.AskAge();
-                Person.SumOfAllAges += p2.Spouse.Age;
-                NumberOfPeople++;
-            }
+            System.Console.WriteLine("In regards to the second person:");
+            p2.GatherData();
 
             p1.PrintNameAndAge();
             if (p1.Married)
-            { p1.Spouse.PrintNameAndAge(); }
+            {
+                p1.Spouse.PrintNameAndAge();
+                NumberOfPeople++;
+            }
             p2.PrintNameAndAge();
             if (p2.Married)
-            { p2.Spouse.PrintNameAndAge(); }
+            {
+                p2.Spouse.PrintNameAndAge();
+                NumberOfPeople++;
+            }
 
             System.Console.WriteLine("Average Age = " + (Person.SumOfAllAges / NumberOfPeople));
+
+            System.Console.WriteLine("Press any key to continue...");
 
             System.Console.ReadKey();
          
