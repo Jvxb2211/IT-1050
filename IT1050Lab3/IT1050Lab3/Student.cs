@@ -21,7 +21,7 @@ namespace IT1050Lab3
 
         public void SetGrade(int Grade)
         {
-            Grade = this.Grade;
+            this.Grade = Grade;
         }
 
         public void Print()

@@ -19,7 +19,7 @@ namespace IT1050Lab3
 
         public void SetStudentGrade(Student thisStudent, int thisGrade)
         {
-            thisStudent.Grade = thisGrade; 
+            thisStudent.SetGrade(thisGrade); 
         }
 
         public string Print()
