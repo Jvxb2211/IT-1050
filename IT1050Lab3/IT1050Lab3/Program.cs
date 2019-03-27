@@ -27,8 +27,9 @@ namespace IT1050Lab3
             Melissa.Print();
             Matt.Print();
 
-            System.Console.ReadKey();
             System.Console.WriteLine("Press any key to continue...");
+            System.Console.ReadKey();
+            
 
             
 
