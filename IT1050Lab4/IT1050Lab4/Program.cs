@@ -22,13 +22,13 @@ namespace IT1050Lab4
             bool showtimeEvening = showtimeAnswer.Contains("y") || showtimeAnswer.Contains("t");
 
             System.Console.WriteLine("How many small sodas?");
-            int snacksSmall = int.Parse(System.Console.ReadLine());
+            int snacksSmallSoda = int.Parse(System.Console.ReadLine());
             System.Console.WriteLine("How many large sodas?");
-            int snacksLarge = int.Parse(System.Console.ReadLine());
+            int snacksLargeSoda = int.Parse(System.Console.ReadLine());
             System.Console.WriteLine("How many Hot Dogs?");
-            int snacksDogs = int.Parse(System.Console.ReadLine());
+            int snacksHotDog = int.Parse(System.Console.ReadLine());
             System.Console.WriteLine("How many Popcorns?");
-            int snacksPop = int.Parse(System.Console.ReadLine());
+            int snacksPopcorn = int.Parse(System.Console.ReadLine());
             System.Console.WriteLine("How many Candies?");
             int snacksCandy = int.Parse(System.Console.ReadLine());
 
@@ -41,24 +41,31 @@ namespace IT1050Lab4
             }
             else
             {
-                ticketsTotal = (ticketsChild * 3.99);
-                ticketsTotal += (ticketsAdult * 5.99);
-                ticketsTotal += (ticketsSenior * 4.5);
+                ticketsTotal = ticketsChild * 3.99;
+                ticketsTotal += ticketsAdult * 5.99;
+                ticketsTotal += ticketsSenior * 4.5;
             }
 
-            double snacksTotal = snacksSmall * 3.50;
-            snacksTotal += snacksLarge * 5.99;
-            snacksTotal += snacksDogs * 3.99;
-            snacksTotal += snacksPop * 4.50;
-            snacksTotal += snacksCandy * 1.99;
+            double priceSmallSoda = 3.50;
+            double priceLargeSoda = 5.99;
+            double priceHotDog = 3.99;
+            double pricePopcorn = 4.50;
+            double priceCandy = 1.99;
+
+
+            double snacksTotal = snacksSmallSoda * priceSmallSoda;
+            snacksTotal += snacksLargeSoda * priceLargeSoda;
+            snacksTotal += snacksHotDog * priceHotDog;
+            snacksTotal += snacksPopcorn * pricePopcorn;
+            snacksTotal += snacksCandy * priceCandy;
 
             int ticketsNumber = ticketsAdult + ticketsChild + ticketsSenior;
 
-            int discountPosibility = Math.Min(snacksPop, snacksLarge);
+            int discountPosibility = Math.Min(snacksPopcorn, snacksLargeSoda);
             int discount1 = Math.Min(discountPosibility, ticketsNumber) * 2;
 
             double discount2 = 0;
-            if(ticketsNumber >= 3 && showtimeEvening == true && snacksPop >= 1)
+            if(ticketsNumber >= 3 && showtimeEvening == true && snacksPopcorn >= 1)
             {
                 discount2 = 4.50;
             }
