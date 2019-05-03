@@ -13,10 +13,10 @@ namespace ConsoleApp1
 
             string[][] grid = new string[8][];
 
+            bool continuePlaying = true;
+            
             void initializeBoard()
             {
-
-
                 for (int i = 0; i < 8; i++)
                 {
                     grid[i] = new string[8];
@@ -27,17 +27,21 @@ namespace ConsoleApp1
                     }
                 }
 
-                for (int i = 3; i < 6; i++)
+                for (int i = 2; i < 6; i++)
                 {
                     for (int j = 0; j < 8; j++)
                     {
                         grid[i][j] = " ";
                     }
                 }
+                printBoard();
+
+                promptUser();
             }
 
             void printBoard()
             {
+                Console.Clear();
                 for (int i = 0; i < 8; i++)
                 {
                     System.Console.WriteLine("<------------------------->");
@@ -51,14 +55,62 @@ namespace ConsoleApp1
 
                 }
                 System.Console.WriteLine("<------------------------->");
-                System.Console.ReadKey();
+            }
+
+            void promptUser()
+            {
+                System.Console.Write("Enter a target X coodinate between 0 and 7 : ");
+                int targetX = int.Parse(System.Console.ReadLine());
+
+                while (targetX < 0 || targetX > 7)
+                {
+                    System.Console.WriteLine("Invalid input. Reinitializing board. Press any key to continue...");
+                    System.Console.ReadKey();
+                    initializeBoard();
+                }
+
+                System.Console.Write("Enter a target Y coodinate between 0 and 7 : ");
+                int targetY = int.Parse(System.Console.ReadLine());
+
+                while (targetY < 0 || targetY > 7)
+                {
+                    System.Console.WriteLine("Invalid input. Reinitializing board. Press any key to continue...");
+                    System.Console.ReadKey();
+                    initializeBoard();
+                }
+
+                System.Console.Write("Enter a destination X coodinate between 0 and 7 : ");
+                int destinationX = int.Parse(System.Console.ReadLine());
+                System.Console.Write("Enter a destination Y coodinate between 0 and 7 : ");
+                int destinationY = int.Parse(System.Console.ReadLine());
+                
+                grid[targetX][targetY] = " ";
+                grid[destinationX][destinationY] = "X";
+
+                printBoard();
+                Continue();
+            }
+
+            bool Continue()
+            {
+                System.Console.Write("Would you like to continue? (y/n) : ");
+                if (System.Console.ReadLine().ToLower().Contains("y"))
+                {
+                    return continuePlaying = true;
+                }
+                else
+                {
+                    return continuePlaying = false;
+                }
             }
 
             initializeBoard();
 
-            printBoard();
-
-
+            while(continuePlaying == true)
+            {
+                printBoard();
+                promptUser();
+            }
         }
 
 
