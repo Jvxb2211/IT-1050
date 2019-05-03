@@ -42,9 +42,12 @@ namespace ConsoleApp1
             void printBoard()
             {
                 Console.Clear();
+                System.Console.WriteLine("    0  1  2  3  4  5  6  7");
+     
                 for (int i = 0; i < 8; i++)
                 {
-                    System.Console.WriteLine("<------------------------->");
+                    System.Console.WriteLine(" <-------------------------->");
+                    System.Console.Write(i +" ");
                     System.Console.Write("|");
                     for (int j = 0; j < 8; j++)
                     {
@@ -54,12 +57,12 @@ namespace ConsoleApp1
                     System.Console.WriteLine();
 
                 }
-                System.Console.WriteLine("<------------------------->");
+                System.Console.WriteLine(" <-------------------------->");
             }
 
             void promptUser()
             {
-                System.Console.Write("Enter a target X coodinate between 0 and 7 : ");
+                System.Console.Write("Enter a target X coordinate between 0 and 7 : ");
                 int targetX = int.Parse(System.Console.ReadLine());
 
                 while (targetX < 0 || targetX > 7)
@@ -69,7 +72,7 @@ namespace ConsoleApp1
                     initializeBoard();
                 }
 
-                System.Console.Write("Enter a target Y coodinate between 0 and 7 : ");
+                System.Console.Write("Enter a target Y coordinate between 0 and 7 : ");
                 int targetY = int.Parse(System.Console.ReadLine());
 
                 while (targetY < 0 || targetY > 7)
@@ -79,9 +82,9 @@ namespace ConsoleApp1
                     initializeBoard();
                 }
 
-                System.Console.Write("Enter a destination X coodinate between 0 and 7 : ");
+                System.Console.Write("Enter a destination X coordinate between 0 and 7 : ");
                 int destinationX = int.Parse(System.Console.ReadLine());
-                System.Console.Write("Enter a destination Y coodinate between 0 and 7 : ");
+                System.Console.Write("Enter a destination Y coordinate between 0 and 7 : ");
                 int destinationY = int.Parse(System.Console.ReadLine());
                 
                 grid[targetX][targetY] = " ";
