@@ -27,6 +27,11 @@ namespace IT1050Lab3
             Melissa.Print();
             Matt.Print();
 
+            John.SetStudentGrade(Joe, 96);
+
+            Joe.Print();
+           
+
             System.Console.WriteLine("Press any key to continue...");
             System.Console.ReadKey();
             
