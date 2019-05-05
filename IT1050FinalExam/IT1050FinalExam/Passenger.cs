@@ -13,8 +13,8 @@ namespace IT1050FinalExam
 
         public Passenger(string name, double weight)
         {
-            name = Name;
-            weight = Weight;
+            this.Name = name;
+            this.Weight = weight;
         }
 
         public string GetName()

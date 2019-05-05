@@ -14,7 +14,7 @@ namespace IT1050FinalExam
         public Elevator(int maxOccupants, double maxWeight)
         {
             Occupants = new Passenger[maxOccupants];
-            maxWeight = MaxWeight;
+            this.MaxWeight = maxWeight;
         }
 
         public void AddOccupant(Passenger passenger, int index)
@@ -28,7 +28,7 @@ namespace IT1050FinalExam
 
             for(int i = 0; i < Occupants.Length; i++)
             {
-                totalWeight = Occupants[i].GetWeight();
+                totalWeight = Occupants[i].GetWeight() + totalWeight;
             }
 
             return totalWeight;
